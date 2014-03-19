@@ -13,7 +13,7 @@ end
 node.default['chef_client']['bin'] = client_bin
 create_directories
 
-version_checker = Gem::Requirement.new(">= 0.10.10")
+version_checker = Gem::Requirement.new('>= 0.10.10')
 mac_service_supported = version_checker.satisfied_by?(Gem::Version.new(node['chef_packages']['chef']['version']))
 
 if mac_service_supported

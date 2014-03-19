@@ -52,7 +52,7 @@ module Opscode
       end
 
       def root_group
-        if %w{ openbsd freebsd mac_os_x mac_os_x_server }.include?(node['platform'])
+        if %w( openbsd freebsd mac_os_x mac_os_x_server ).include?(node['platform'])
           'wheel'
         elsif ['windows'].include?(node['platform'])
           'Administrators'
@@ -73,7 +73,7 @@ module Opscode
         # dir_owner and dir_group are not found in the block below.
         d_owner = dir_owner
         d_group = dir_group
-        %w{run_path cache_path backup_path log_dir conf_dir}.each do |dir|
+        %w(run_path cache_path backup_path log_dir conf_dir).each do |dir|
           directory node['chef_client'][dir] do
             recursive true
             mode 00750 if dir == 'log_dir'
@@ -117,7 +117,7 @@ module Opscode
           Chef::Log.debug 'Using chef-client bin from sane path'
           chef_in_sane_path
         # last ditch search for a bin in PATH
-        elsif (chef_in_path = %x{#{which} chef-client}.chomp) && ::File.send(existence_check, chef_in_path)
+        elsif (chef_in_path = %x(#{which} chef-client).chomp) && ::File.send(existence_check, chef_in_path)
           Chef::Log.debug 'Using chef-client bin from system path'
           chef_in_path
         else

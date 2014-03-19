@@ -30,7 +30,7 @@ user 'group' do
   action :nothing
 end.run_action(:create)
 
-%w{run_path cache_path backup_path log_dir conf_dir}.each do |key|
+%w(run_path cache_path backup_path log_dir conf_dir).each do |key|
   directory node['chef_client'][key] do
     recursive true
     action :nothing

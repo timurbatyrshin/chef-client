@@ -21,7 +21,7 @@
 # limitations under the License.
 #
 
-supported_init_styles = %w{
+supported_init_styles = %w(
   arch
   bluepill
   bsd
@@ -33,7 +33,7 @@ supported_init_styles = %w{
   upstart
   windows
   winsw
-}
+)
 
 init_style = node['chef_client']['init_style']
 

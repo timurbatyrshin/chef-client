@@ -12,10 +12,10 @@ node.default['chef_client']['bin'] = client_bin
 create_directories
 
 dist_dir, conf_dir = value_for_platform_family(
-  ['debian'] => %w{ debian default },
-  ['fedora'] => %w{ redhat sysconfig },
-  ['rhel'] => %w{ redhat sysconfig },
-  ['suse'] => %w{ suse sysconfig }
+  ['debian'] => %w( debian default ),
+  ['fedora'] => %w( redhat sysconfig ),
+  ['rhel'] => %w( redhat sysconfig ),
+  ['suse'] => %w( suse sysconfig )
 )
 
 template '/etc/init.d/chef-client' do
